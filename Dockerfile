@@ -21,15 +21,15 @@ ENV DEBIAN_FRONTEND=noninteractive
 
 # Install Zephyr required dependencies
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    dfu-util=0.11-1 \
-    gperf=3.1-1build1 \
-    ccache=4.9.1-1\
-    locales=2.39-0ubuntu8.7 \
-    device-tree-compiler=1.7.0-2build1 \
-    libsdl2-dev=2.30.0+dfsg-1ubuntu3.1 \
-    libmagic1=1:5.45-3build1 \
-    python3-dev=3.12.3-0ubuntu2.1 \
-    python3-tk=3.12.3-0ubuntu1 \
+    dfu-util \
+    gperf \
+    ccache\
+    locales \
+    device-tree-compiler \
+    libsdl2-dev \
+    libmagic1 \
+    python3-dev \
+    python3-tk \
     && rm -rf /var/lib/apt/lists/*
 
 # Clean up stale packages
