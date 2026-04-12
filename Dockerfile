@@ -5,7 +5,7 @@ ARG USERNAME=developer
 ARG ZEPHYR_HOME=/home/${USERNAME}/zephyr-workspace
 
 ARG ZEPHYR_RTOS_VERSION=4.3.0
-ARG ZEPHYR_SDK_VERSION=1.0.1
+ARG ZEPHYR_SDK_VERSION=0.17.4
 
 ARG TOOLCHAIN_LIST="xtensa-espressif_esp32_zephyr-elf xtensa-espressif_esp32s2_zephyr-elf xtensa-espressif_esp32s3_zephyr-elf arm-zephyr-eabi"
 
@@ -30,6 +30,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libmagic1 \
     python3-dev \
     python3-tk \
+    python3-venv \
     && rm -rf /var/lib/apt/lists/*
 
 # Clean up stale packages
