@@ -1,6 +1,6 @@
 FROM ghcr.io/sbouthillier/embedded-base:v1.0.0
 
-ARG USERNAME=ubuntu
+ARG USERNAME=developer
 
 ARG ZEPHYR_HOME=/home/${USERNAME}/zephyr-workspace
 
