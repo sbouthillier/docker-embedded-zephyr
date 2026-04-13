@@ -12,7 +12,7 @@ ARG TOOLCHAIN_LIST="xtensa-espressif_esp32_zephyr-elf xtensa-espressif_esp32s2_z
 ARG VIRTUAL_ENV=${ZEPHYR_HOME}/.venv
 
 # Set default shell during Docker image build to bash
-SHELL ["/bin/bash", "-eo", "pipefail", "-c"]
+RUN bash -c "echo hello"
 
 USER root
 
@@ -31,6 +31,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     python3-dev \
     python3-tk \
     python3-venv \
+    file \
     && rm -rf /var/lib/apt/lists/*
 
 # Clean up stale packages
@@ -50,7 +51,7 @@ USER ${USERNAME}
 ENV VIRTUAL_ENV=${VIRTUAL_ENV}
 ENV PATH="${VIRTUAL_ENV}/bin:$PATH"
 RUN python3 -m venv ${VIRTUAL_ENV} \
-    && python3 -m pip install --no-cache-dir west==1.5.0
+    && python3 -m pip install --no-cache-dir west
 
 # ----------------------------------------------------------------------
 # Zephyr RTOS
